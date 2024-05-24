@@ -1,14 +1,84 @@
+@charset "UTF-8";
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #02835E;
+    --cor3: #02935E;
+    --cor4: #03035E;
+    --cor5: #03135E;
+    --cor6: #52724A;
+    
+    --fonte-padrão: arial;
+    --fonte-destaque: arial;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+/* barra de menu */
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+
+
+}
+
+.cabecalho-menu{
+    display: flex;
+    justify-content: space-around;
+    gap: 35px;
+    align-items: center;
+    height: 40px;
+    width: 720px;
+    background-color: var(--cor1);
+    border-radius: 15px;
+}
+
+.inicio{
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-left: 5px;
+}
+
+.como-descartar{
+    text-align: center;
+     font-size: 14px;
+     color: #FFFFFF;
+     font-weight: 600;
+     font-family: "Playfair Display", serif;
+
+}
+
+.login{
+    padding-left: 262px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-right: 5px;
+}
+
+
 /*Conteúdo */
+
 section.cadastro {
     display: flex;
-    margin: 1.5rem 4rem;
-    padding: 2rem;
+    margin: 0rem 4rem;
+    padding: 0.5rem 1.5rem 1rem;
 }
 
 section.listagem {
     background-color: #C0C0C0;
     padding: 1.5rem 6rem 5rem;
-    margin: 0;
     /* display: flex;
     margin: auto; */
 }
@@ -29,32 +99,46 @@ div#perfil + div {
 #card-servico {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     text-align: center;
-    background-color: rgb(65, 75, 59, .6);
+    background-color: #C0C0C0;
     border-radius: 10px;
     margin: auto;
     padding: 1rem 2.5rem;
-    color: #D9D9D9;
+    color: #0c0c0c;
 }
 
-input#horarioAtendimento, input#categoria, button, textarea {
+#card-servico div#button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+input, button, textarea, select {
     width: 75%;
     height: 30px;
     border: none;
     border-radius: 10px;
-    background-color: #D9D9D9;
+    background-color: rgb(109, 143, 100, .56);
     margin: 0.5rem;
     padding: 0.3rem;
-    color: #848484;
 }
 
 textarea {
     height: 60px;
 }
 
-input#horarioAtendimento::placeholder, input#categoria::placeholder, textarea::placeholder {
-    color: #848484;
+.campos-forms {
+    display: flex;
+    align-items: center;
+}
+
+.campos-forms label span, div p span {
+    color: red;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #D9D9D9;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 
@@ -74,11 +158,21 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(65, 75, 59, .6);
+    background-color: #6d8f64;
     margin: 1rem auto;
     padding: 1rem;
     border-radius: 10px;
 }
+
+.servico input::placeholder, .servico textarea::placeholder {
+    color: #7a7979;
+}
+
+.servico input, .servico textarea {
+    background-color: #C0C0C0;
+    color: #727070;
+}
+
 .botoes {
     display: flex;
 }
@@ -99,9 +193,48 @@ button.excluir {
 
     font-size: large;
     text-align: center;
-    font-family: "Playfair Display", serif;;
+    font-family: "Playfair Display", serif;
 }
+
 /* Rodapé */
-.rodape {
+.rodape{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
     z-index: 5;
+}
+
+.rodape-texto{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+
+.rodape-img{
+    display: flex;
+    align-self:center;
+    position:absolute;
+    padding-bottom: 5.7%;
+    width: 40px;
+    height: 35px;
+}
+
+#fundo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
 }
